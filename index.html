@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--Linking to external CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    
+</head>
+<body>
+    <div class="wrapper">
+
+        <h1>calculator.js</h1>
+        <div class="calculator">
+            
+            <form name="form">
+                <input class="numbers-field" placeholder="0">
+            </form>
+
+            <table class="calc-buttons">
+                <tr>
+                    <td><button class="button clear">AC</button></td>
+                    <td><button class="button delete"><i class="fas fa-backspace"></i></button></td>
+                    <td><button class="button operation" value="/">&#247</button></td>
+                    <td><button class="button operation" value="*">x</button></td>  
+                </tr>
+                <tr>
+                    <td><button class="button number" value="7">7</button></td>
+                    <td><button class="button number" value="8">8</button></td>
+                    <td><button class="button number" value="9">9</button></td>
+                    <td><button class="button operation" value="-">-</button></td>
+                    
+                </tr>
+                <tr>
+                    <td><button class="button number" value="4">4</button></td>
+                    <td><button class="button number" value="5">5</button></td>
+                    <td><button class="button number" value="6">6</button></td>
+                    <td><button class="button operation" value="+">+</button></td> 
+                    
+                </tr>
+                <tr>
+                    <td><button class="button number" value="1">1</button></td>
+                    <td><button class="button number" value="2">2</button></td>
+                    <td><button class="button number" value="3">3</button></td>
+                    <td><button class="button sign">+/-</button></td>
+                    
+                </tr>
+                <tr>
+                    <td><button class="button number" value="0">0</button></td>
+                    <td colspan="3"><button class="button enter" value="=">=</button></td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--All Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/calculator.js"></script>
+    
+</body>
+</html>

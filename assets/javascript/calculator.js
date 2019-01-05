@@ -3,22 +3,45 @@ var calculationArr = [];
 var operators = ["+", "-", "*", "/"];
 var numChange;
 
+//adds user inputted number to expressionArr and displays
 $(".number").on("click", function() {
     expressionArr.push($(this).val());
-    $("#numbers-field").append($(this).val());
+    $(".numbers-field").val(expressionArr.join(""));
 });
 
+//adds user inputted number to expressionArr and displays
 $(".operation").on("click", function() {
     expressionArr.push($(this).val());
-    $("#numbers-field").append("" + $(this).val() + "");
+    $(".numbers-field").val(expressionArr.join(""));
 });
 
+//allows user to delete most recent entry and removes it from the expressionArr
+$(".delete").on("click", function() {
+    expressionArr.pop();
+    $(".numbers-field").val(expressionArr.join(""));
+});
+
+//completely clears expressionArr
 $(".clear").on("click", function() {
     expressionArr = [];
-    $("#numbers-field").text("");
+    $(".numbers-field").val(expressionArr.join(""));
 });
 
+//allows user to change sign of most recent input in expressionArr
+
+$(".sign").on("click", function() {
+    var num_to_change = expressionArr.pop();
+    num_to_change *= -1;
+    expressionArr.push(num_to_change.toString());
+    $(".numbers-field").val(expressionArr.join(""));
+});
+
+//begins calculation of result
+
 $(".enter").on("click", function() {
+
+    //empties calculationArr so last calculation result is not displayed when user clicks "enter"
+    calculationArr = [];
 
     //converts user input to parsable string
 
@@ -35,10 +58,9 @@ $(".enter").on("click", function() {
             } 
         }
     }
-
     while(numChange);
 
-    //parsing all elements into numbers except operators and returning a new array
+    //parsing all elements into numbers except operators and returning a new array called calculationArr
 
     for (var i = 0; i < expressionArr.length; i++) {
         if (expressionArr[i] === "+" || expressionArr[i] === "-" || expressionArr[i] === "*" || expressionArr[i] === "/") {
@@ -49,6 +71,8 @@ $(".enter").on("click", function() {
         }
     }
 
+
+    // calculates multiplication and division expressions in order from left to right
     while (calculationArr.includes("*") || calculationArr.includes("/")) {
         for (var i = 0; i < calculationArr.length; i++) {
             if (calculationArr[i] === "*") {
@@ -65,29 +89,35 @@ $(".enter").on("click", function() {
         }
     }
 
-    while (calculationArr.includes("-") || calculationArr.includes("+")) {
+    //calculates addition and subtraction expressions in order from left to right
+    while (calculationArr.includes("+") || calculationArr.includes("-")) {
         for (var i = 0; i < calculationArr.length; i++) {
-            if (calculationArr[i] === "-") {
-                var result = calculationArr[i-1] - calculationArr[i+1];
+            if (calculationArr[i] === "+") {
+                var result = calculationArr[i-1] + calculationArr[i+1];
                 var start_index = i-1;
                 var num_elements_to_remove = 3;
                 calculationArr.splice(start_index, num_elements_to_remove, result);
-            } else if (calculationArr[i] === "+") {
-                var result = calculationArr[i-1] + calculationArr[i+1];
+            } else if (calculationArr[i] === "-") {
+                var result = calculationArr[i-1] - calculationArr[i+1];
                 var start_index = i-1;
                 var num_elements_to_remove = 3;
                 calculationArr.splice(start_index, num_elements_to_remove, result);
             }
         }
     }
-
-    console.log(calculationArr);
-
     
 
-    $("#numbers-field").append(" = " + calculationArr[0]);
+    //displays final result (first element of calculationArr)
+
+
+    $(".numbers-field").val(calculationArr[0].toFixed(2));
+
+
+   
 
 });
+
+
 
 
 
