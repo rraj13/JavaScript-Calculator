@@ -4,19 +4,15 @@
 }
 
 body {
-    background: #777;
+    background: #1c1c1c;
 }
+
 .wrapper {
     display: grid;
     grid-template: 1fr;
     justify-items: center;
     padding-top: 5rem;
     text-align: center;
-}
-
-.calculator {
-    background:#3b3535;
-    border-radius: 5%;
 }
 
 h1 {
@@ -26,30 +22,51 @@ h1 {
     color: #fff;
 }
 
+h2 {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
 .numbers-field {
-    background-color: #fff;
-    font-size: 24px;
+    background-color: #1c1c1c;
+    border: none;
+    color: #fff;
+    font-size: 30px;
     height: 50px;
     width: 186px;
     text-align: right;
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 45px;
 }
 
 .button {
     width: 50px;
     height: 50px;
-    font-size: 16px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     background-color: black;
-    margin: 5px 8px;
-    border-radius: 15%;
+    margin: 5px 5px;
+    border: none;
+    border-radius: 50%;
+
 }
 
-.enter {
-    width: 150px;
+.tools {
+    color: black;
+    background-color: #d4d4d2;
+}
+
+.operation {
+    background-color: #ff9500;
+}
+
+.number, .decimal, .enter {
+    background-color: #505050;
 }
 
 

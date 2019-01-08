@@ -36,6 +36,29 @@ $(".sign").on("click", function() {
     $(".numbers-field").val(expressionArr.join(""));
 });
 
+//allows user to input decimal numbers
+
+$(".decimal").on("click", function() {
+    if (expressionArr.length === 0) {
+        expressionArr.push("0.");
+        $(".numbers-field").val(expressionArr);
+    } else {
+        var num_to_change = expressionArr.pop();
+        num_to_change += "."
+        expressionArr.push(num_to_change.toString());
+        $(".numbers-field").val(expressionArr.join(""));
+    }
+});
+
+//converts number entered to value divided by 100
+
+$(".percent").on("click", function() {
+    var num_to_change = expressionArr.pop();
+    num_to_change = num_to_change/100;
+    expressionArr.push(num_to_change.toString());
+    $(".numbers-field").val(expressionArr.join(""));
+})
+
 //begins calculation of result
 
 $(".enter").on("click", function() {
@@ -66,7 +89,7 @@ $(".enter").on("click", function() {
         if (expressionArr[i] === "+" || expressionArr[i] === "-" || expressionArr[i] === "*" || expressionArr[i] === "/") {
             calculationArr.push(expressionArr[i]);
         } else {
-            var parsed = parseInt(expressionArr[i]);
+            var parsed = parseFloat(expressionArr[i]);
             calculationArr.push(parsed);
         }
     }
