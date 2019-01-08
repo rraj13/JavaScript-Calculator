@@ -38,5 +38,5 @@ Well, that was a lot.
 Please feel free to take a look at my code and reach out with any questions! 
 
 ## Credits
-Apple iOS Calculator Design
+Apple iOS Calculator Design<br/>
 SchemeColor article - https://www.schemecolor.com/apple-calculator-app-icon-2017-colors.php
