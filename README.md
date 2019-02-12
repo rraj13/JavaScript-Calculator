@@ -16,7 +16,7 @@ The main methodology I implemented in this project was array concatenation, pars
 
 For example,
 
-If a user enters 5 + 2 / 3 ==> ["2", "5", "+". "2". "/", "3"] is now the new expressionArr.
+If a user enters 25 + 2 / 3 ==> ["2", "5", "+". "2". "/", "3"] is now the new expressionArr.
 
 The next step was take loop through the array and ensure that multiple digit numbers are accounted for. Here, I used some logic to essentially say that anytime an array element is followed by a number, combine them, and add the new multiple digit number to the array, replacing the original two.
 
