@@ -1,5 +1,9 @@
 # JavaScript-Calculator
 
+Live Link: https://rraj13.github.io/JavaScript-Calculator/
+
+![alt text](CalculatorScreenshot.png "JavaScript Calculator Screenshot")
+
 ## Introduction
 Hey there! Here I have created a four function calculator using JavaScript and a bit of JQuery for DOM Manipulation. The user enters the operation they wish to perform, hits the "=" button and are presented with the calculated result. The program can handle both single and multiple operation expressions, following standard order of operations rules.
 
